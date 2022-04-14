@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.Firbase_bulletin_board" parent="Theme.MaterialComponents.Light" />
+</resources>
