@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="fragment"
+            type="com.example.presentation.ui.account.LoginFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -129,13 +132,13 @@
 
         <TextView
             android:id="@+id/go_sign_up_btn"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:onClick="@{fragment::goSignup}"
             android:text="계정이 없으신가요?"
             android:textColor="@color/cardview_dark_background"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
             app:layout_constraintTop_toBottomOf="@+id/login_btn" />
 
