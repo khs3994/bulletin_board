@@ -120,6 +120,7 @@
 
         <Button
             android:id="@+id/login_btn"
+            android:onClick="@{fragment::goMain}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#7324FF"
@@ -136,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:onClick="@{fragment::goSignup}"
-            android:text="계정이 없으신가요?"
+            android:text="@string/no_account"
             android:textColor="@color/cardview_dark_background"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/guideline5"

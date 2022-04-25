@@ -15,4 +15,7 @@
     <string name="sign_in">SIGN IN</string>
     <string name="sign_up">SIGN UP</string>
     <string name="sign_up_btn_text">회원가입</string>
+    <string name="go_board">게시판 가기</string>
+    <string name="go_profile">프로필 가기</string>
+    <string name="no_account">계정이 없으신가요?</string>
 </resources>
