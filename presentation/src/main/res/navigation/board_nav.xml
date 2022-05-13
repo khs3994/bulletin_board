@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/board_nav"
+    app:startDestination="@id/boardFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_board"
+        android:id="@+id/boardFragment"
+        android:name="com.example.presentation.ui.board.BoardFragment"
+        android:label="BoardFragment" >
+        <action
+            android:id="@+id/action_boardFragment_to_modifyFragment"
+            app:destination="@id/modifyFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_modify"
+        android:id="@+id/modifyFragment"
+        android:name="com.example.presentation.ui.board.ModifyFragment"
+        android:label="ModifyFragment" />
+</navigation>
