@@ -9,9 +9,8 @@ import com.example.presentation.R
 import com.example.presentation.base.BaseFragment
 import com.example.presentation.databinding.FragmentWirteBinding
 
-
-class WirteFragment : BaseFragment<FragmentWirteBinding>(R.layout.fragment_wirte) {
+class WriteFragment : BaseFragment<FragmentWirteBinding>(R.layout.fragment_wirte) {
     override fun init() {
-
+        shortShowToast("글쓰기")
     }
 }

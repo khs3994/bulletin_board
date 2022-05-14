@@ -1,6 +1,7 @@
 package com.example.presentation.ui.board
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,6 @@ import com.example.presentation.databinding.FragmentBoardBinding
 
 class BoardFragment : BaseFragment<FragmentBoardBinding>(R.layout.fragment_board) {
     override fun init() {
-
+        shortShowToast("게시판")
     }
 }
