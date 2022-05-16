@@ -1,11 +1,12 @@
 package com.example.presentation.ui.board
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+
+import android.content.Intent
 import androidx.fragment.app.Fragment
 import com.example.presentation.R
 import com.example.presentation.base.BaseActivity
 import com.example.presentation.databinding.ActivityBoardBinding
+import com.example.presentation.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,6 +27,9 @@ class BoardActivity : BaseActivity<ActivityBoardBinding>(R.layout.activity_board
                         changeFragment(board)
                     }
                     R.id.second -> {
+                        goMain()
+                    }
+                    R.id.third -> {
                         changeFragment(write)
                     }
                 }
@@ -33,6 +37,11 @@ class BoardActivity : BaseActivity<ActivityBoardBinding>(R.layout.activity_board
             }
             selectedItemId = R.id.first
         }
+    }
+
+    private fun goMain()
+    {
+        startActivity(Intent(this,MainActivity::class.java))
     }
 
     private fun changeFragment(fragment: Fragment) {
