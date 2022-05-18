@@ -6,19 +6,19 @@
         android:id="@+id/first"
         android:enabled="true"
         android:icon="@drawable/ic_board"
-        android:title="게시판"
+        android:title="@string/board"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/second"
         android:icon="@drawable/ic_home"
-        android:title="홈"
+        android:title="@string/home"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/third"
         android:icon="@drawable/ic_write"
-        android:title="글쓰기"
+        android:title="@string/write"
         app:showAsAction="ifRoom" />
 
 </menu>
