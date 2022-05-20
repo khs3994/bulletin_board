@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.presentation.R
 import com.example.presentation.base.BaseFragment
-import com.example.presentation.databinding.FragmentModifyBinding
+import com.example.presentation.databinding.FragmentDetailBinding
 
-
-class ModifyFragment : BaseFragment<FragmentModifyBinding>(R.layout.fragment_modify) {
+class DetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.fragment_detail) {
     override fun init() {
 
     }
