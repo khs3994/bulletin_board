@@ -10,6 +10,5 @@ class AccountViewModel @Inject constructor(
 ): ViewModel() {
     fun signUp(email: String, pw: String) {
 
-    }
-
+   }
 }
