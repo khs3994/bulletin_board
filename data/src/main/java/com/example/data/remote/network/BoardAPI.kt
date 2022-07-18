@@ -1,6 +1,7 @@
 package com.example.data.remote.network
 
 import com.example.data.remote.dto.board.request.PostCreatePostRequest
+import com.example.data.remote.dto.board.request.PutPostRequest
 import com.example.data.remote.dto.board.response.GetAllPostingResponse
 import com.example.data.remote.dto.board.response.GetDetailResponse
 import retrofit2.Response
@@ -28,6 +29,7 @@ interface BoardAPI {
 
     @PUT("/{boardId}")
     suspend fun putPost(
-        @Path("boardId") boardId: Int
+        @Path("boardId") boardId: Int,
+        @Body body: PutPostRequest
     ): Response<Void>
 }
