@@ -1,5 +1,6 @@
 package com.example.firbase_bulletin_board.di.module
 
+import com.example.data.remote.network.BoardAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -47,5 +48,11 @@ object NetworkModule {
     @Singleton
     fun provideConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideBoardService(retrofit: Retrofit): BoardAPI {
+        return retrofit.create(BoardAPI::class.java)
     }
 }
