@@ -13,23 +13,23 @@ class BoardRepositoryImpl @Inject constructor(
     private val dataSource: BoardDataSource
 ) : BoardRepository {
     override suspend fun getAllPosting(): Response<GetAllPostingResponse> {
-        TODO("Not yet implemented")
+        return dataSource.getAllPosting()
     }
 
     override suspend fun getDetail(boardId: Int): Response<GetDetailResponse> {
-        TODO("Not yet implemented")
+        return dataSource.getDetail(boardId = boardId)
     }
 
     override suspend fun postCreatePost(body: PostCreatePostRequest): Response<Void> {
-        TODO("Not yet implemented")
+        return dataSource.postCreatePost(body = body)
     }
 
     override suspend fun deletePost(boardId: Int): Response<Void> {
-        TODO("Not yet implemented")
+        return dataSource.deletePost(boardId = boardId)
     }
 
     override suspend fun putPost(boardId: Int, body: PutPostRequest): Response<Void> {
-        TODO("Not yet implemented")
+        return dataSource.putPost(boardId = boardId, body = body)
     }
 
 }
