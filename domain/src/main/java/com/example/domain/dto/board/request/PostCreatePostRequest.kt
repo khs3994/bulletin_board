@@ -1,4 +1,4 @@
-package com.example.data.remote.dto.board.request
+package com.example.domain.dto.board.request
 
 data class PostCreatePostRequest(
     val title: String,

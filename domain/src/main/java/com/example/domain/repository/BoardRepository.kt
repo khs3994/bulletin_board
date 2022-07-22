@@ -1,9 +1,9 @@
 package com.example.domain.repository
 
-import com.example.data.remote.dto.board.request.PostCreatePostRequest
-import com.example.data.remote.dto.board.request.PutPostRequest
-import com.example.data.remote.dto.board.response.GetAllPostingResponse
-import com.example.data.remote.dto.board.response.GetDetailResponse
+import com.example.domain.dto.board.request.PostCreatePostRequest
+import com.example.domain.dto.board.request.PutPostRequest
+import com.example.domain.dto.board.response.GetAllPostingResponse
+import com.example.domain.dto.board.response.GetDetailResponse
 import retrofit2.Response
 
 interface BoardRepository {
