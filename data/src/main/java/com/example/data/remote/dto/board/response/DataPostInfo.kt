@@ -1,8 +1,7 @@
 package com.example.data.remote.dto.board.response
 
-data class GetDetailResponse(
+data class DataPostInfo(
     val id: Int,
     val title: String,
-    val description: String,
     val userName: String
 )

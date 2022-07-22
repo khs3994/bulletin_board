@@ -1,6 +1,6 @@
 package com.example.domain.dto.board.request
 
-data class PutPostRequest(
+data class DomainPutPostRequest(
     val title: String,
     val description: String
 )

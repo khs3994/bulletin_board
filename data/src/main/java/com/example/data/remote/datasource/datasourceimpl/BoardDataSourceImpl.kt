@@ -1,10 +1,10 @@
 package com.example.data.remote.datasource.datasourceimpl
 
 import com.example.data.remote.datasource.BoardDataSource
-import com.example.data.remote.dto.board.request.PostCreatePostRequest
-import com.example.data.remote.dto.board.request.PutPostRequest
-import com.example.data.remote.dto.board.response.GetAllPostingResponse
-import com.example.data.remote.dto.board.response.GetDetailResponse
+import com.example.data.remote.dto.board.request.DataPostCreatePostRequest
+import com.example.data.remote.dto.board.request.DataPutPostRequest
+import com.example.data.remote.dto.board.response.DataGetAllPostingResponse
+import com.example.data.remote.dto.board.response.DataGetDetailResponse
 import com.example.data.remote.network.BoardAPI
 import retrofit2.Response
 import javax.inject.Inject
@@ -12,15 +12,15 @@ import javax.inject.Inject
 class BoardDataSourceImpl @Inject constructor(
     private val board: BoardAPI
 ) : BoardDataSource {
-    override suspend fun getAllPosting(): Response<GetAllPostingResponse> {
+    override suspend fun getAllPosting(): Response<DataGetAllPostingResponse> {
         return board.getAllPosting()
     }
 
-    override suspend fun getDetail(boardId: Int): Response<GetDetailResponse> {
+    override suspend fun getDetail(boardId: Int): Response<DataGetDetailResponse> {
         return board.getDetail(boardId = boardId)
     }
 
-    override suspend fun postCreatePost(body: PostCreatePostRequest): Response<Void> {
+    override suspend fun postCreatePost(body: DataPostCreatePostRequest): Response<Void> {
         return board.postCreatePost(body = body)
     }
 
@@ -28,7 +28,7 @@ class BoardDataSourceImpl @Inject constructor(
         return board.deletePost(boardId = boardId)
     }
 
-    override suspend fun putPost(boardId: Int, body: PutPostRequest): Response<Void> {
+    override suspend fun putPost(boardId: Int, body: DataPutPostRequest): Response<Void> {
         return board.putPost(boardId = boardId, body = body)
     }
 }
