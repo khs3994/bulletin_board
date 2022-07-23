@@ -1,5 +1,6 @@
 package com.example.data.repositoryimpl
 
+import com.example.data.mapper.BoardMapper
 import com.example.data.remote.datasource.BoardDataSource
 import com.example.domain.dto.board.request.DomainPostCreatePostRequest
 import com.example.domain.dto.board.request.DomainPutPostRequest
@@ -16,11 +17,11 @@ class BoardRepositoryImpl @Inject constructor(
         TODO("Not yet implemented")
     }
 
-    override suspend fun getDetail(boardId: Int): Response<DomainGetDetailResponse> {
-        TODO("Not yet implemented")
+    override suspend fun getDetail(boardId: Int): DomainGetDetailResponse? {
+        return BoardMapper.getDetailMapper(dataSource.getDetail(boardId))
     }
 
-    override suspend fun postCreatePost(body: DomainPostCreatePostRequest): Response<Void> {
+    override suspend fun postCreatePost(body: DomainPostCreatePostRequest): Void? {
         TODO("Not yet implemented")
     }
 

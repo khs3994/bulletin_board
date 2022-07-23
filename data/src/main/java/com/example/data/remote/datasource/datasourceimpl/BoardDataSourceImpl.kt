@@ -16,12 +16,12 @@ class BoardDataSourceImpl @Inject constructor(
         return board.getAllPosting()
     }
 
-    override suspend fun getDetail(boardId: Int): Response<DataGetDetailResponse> {
-        return board.getDetail(boardId = boardId)
+    override suspend fun getDetail(boardId: Int): DataGetDetailResponse? {
+        return board.getDetail(boardId = boardId).body()
     }
 
-    override suspend fun postCreatePost(body: DataPostCreatePostRequest): Response<Void> {
-        return board.postCreatePost(body = body)
+    override suspend fun postCreatePost(body: DataPostCreatePostRequest): Void? {
+        return board.postCreatePost(body = body).body()
     }
 
     override suspend fun deletePost(boardId: Int): Response<Void> {

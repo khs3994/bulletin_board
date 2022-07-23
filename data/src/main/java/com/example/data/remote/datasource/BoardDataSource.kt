@@ -9,11 +9,11 @@ import retrofit2.Response
 interface BoardDataSource {
     suspend fun getAllPosting(): Response<DataGetAllPostingResponse>
 
-    suspend fun getDetail(boardId: Int): Response<DataGetDetailResponse>
+    suspend fun getDetail(boardId: Int): DataGetDetailResponse?
 
     suspend fun postCreatePost(
         body: DataPostCreatePostRequest
-    ): Response<Void>
+    ): Void?
 
     suspend fun deletePost(boardId: Int): Response<Void>
 
