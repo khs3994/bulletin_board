@@ -7,7 +7,7 @@ import com.example.data.remote.dto.board.response.DataGetDetailResponse
 import retrofit2.Response
 
 interface BoardDataSource {
-    suspend fun getAllPosting(): Response<DataGetAllPostingResponse>
+    suspend fun getAllPosting(): DataGetAllPostingResponse?
 
     suspend fun getDetail(boardId: Int): DataGetDetailResponse?
 
@@ -15,10 +15,10 @@ interface BoardDataSource {
         body: DataPostCreatePostRequest
     ): Void?
 
-    suspend fun deletePost(boardId: Int): Response<Void>
+    suspend fun deletePost(boardId: Int): Void?
 
     suspend fun putPost(
         boardId: Int,
         body: DataPutPostRequest
-    ): Response<Void>
+    ): Void?
 }

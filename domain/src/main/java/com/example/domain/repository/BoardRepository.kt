@@ -7,7 +7,7 @@ import com.example.domain.dto.board.response.DomainGetDetailResponse
 import retrofit2.Response
 
 interface BoardRepository {
-    suspend fun getAllPosting(): Response<DomainGetAllPostingResponse>
+    suspend fun getAllPosting(): DomainGetAllPostingResponse?
 
     suspend fun getDetail(boardId: Int): DomainGetDetailResponse?
 
@@ -15,10 +15,10 @@ interface BoardRepository {
         body: DomainPostCreatePostRequest
     ): Void?
 
-    suspend fun deletePost(boardId: Int): Response<Void>
+    suspend fun deletePost(boardId: Int): Void?
 
     suspend fun putPost(
         boardId: Int,
         body: DomainPutPostRequest
-    ): Response<Void>
+    ): Void?
 }

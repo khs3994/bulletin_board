@@ -12,8 +12,8 @@ import javax.inject.Inject
 class BoardDataSourceImpl @Inject constructor(
     private val board: BoardAPI
 ) : BoardDataSource {
-    override suspend fun getAllPosting(): Response<DataGetAllPostingResponse> {
-        return board.getAllPosting()
+    override suspend fun getAllPosting(): DataGetAllPostingResponse? {
+        return board.getAllPosting().body()
     }
 
     override suspend fun getDetail(boardId: Int): DataGetDetailResponse? {
@@ -24,11 +24,11 @@ class BoardDataSourceImpl @Inject constructor(
         return board.postCreatePost(body = body).body()
     }
 
-    override suspend fun deletePost(boardId: Int): Response<Void> {
-        return board.deletePost(boardId = boardId)
+    override suspend fun deletePost(boardId: Int): Void? {
+        return board.deletePost(boardId = boardId).body()
     }
 
-    override suspend fun putPost(boardId: Int, body: DataPutPostRequest): Response<Void> {
-        return board.putPost(boardId = boardId, body = body)
+    override suspend fun putPost(boardId: Int, body: DataPutPostRequest): Void? {
+        return board.putPost(boardId = boardId, body = body).body()
     }
 }

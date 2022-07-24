@@ -2,6 +2,8 @@ package com.example.data.repositoryimpl
 
 import com.example.data.mapper.BoardMapper
 import com.example.data.remote.datasource.BoardDataSource
+import com.example.data.remote.dto.board.request.DataPostCreatePostRequest
+import com.example.data.remote.dto.board.request.DataPutPostRequest
 import com.example.domain.dto.board.request.DomainPostCreatePostRequest
 import com.example.domain.dto.board.request.DomainPutPostRequest
 import com.example.domain.dto.board.response.DomainGetAllPostingResponse
@@ -13,8 +15,8 @@ import javax.inject.Inject
 class BoardRepositoryImpl @Inject constructor(
     private val dataSource: BoardDataSource
 ) : BoardRepository {
-    override suspend fun getAllPosting(): Response<DomainGetAllPostingResponse> {
-        TODO("Not yet implemented")
+    override suspend fun getAllPosting(): DomainGetAllPostingResponse? {
+        return BoardMapper.getAllPostingMapper(dataSource.getAllPosting())
     }
 
     override suspend fun getDetail(boardId: Int): DomainGetDetailResponse? {
@@ -22,15 +24,26 @@ class BoardRepositoryImpl @Inject constructor(
     }
 
     override suspend fun postCreatePost(body: DomainPostCreatePostRequest): Void? {
-        TODO("Not yet implemented")
+        return dataSource.postCreatePost(
+            DataPostCreatePostRequest(
+                title = body.title,
+                description = body.description,
+                userName = body.userName
+            )
+        )
     }
 
-    override suspend fun deletePost(boardId: Int): Response<Void> {
-        TODO("Not yet implemented")
+    override suspend fun deletePost(boardId: Int): Void? {
+        return dataSource.deletePost(boardId)
     }
 
-    override suspend fun putPost(boardId: Int, body: DomainPutPostRequest): Response<Void> {
-        TODO("Not yet implemented")
+    override suspend fun putPost(boardId: Int, body: DomainPutPostRequest): Void? {
+        return dataSource.putPost(
+            boardId, DataPutPostRequest(
+                title = body.title,
+                description = body.description
+            )
+        )
     }
 
 }
